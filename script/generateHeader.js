@@ -39,7 +39,7 @@ export const generateHeader = () => {
                         />
                         <button type="submit" class="btn search-btn" aria-label="найти"></button>
                     </form>
-                    <a href="goods.html?cat=wishlist" class="btn btn-wishlist">
+                    <a href="goods.html?wishlist" class="btn btn-wishlist">
                         <svg
                             focusable="false"
                             class="svg-icon"
