@@ -1,6 +1,4 @@
-"use strict";
-
-const generateHeader = () => {
+export const generateHeader = () => {
     const headerHTML = `
         <header>
             <div class="container">
@@ -84,4 +82,4 @@ const generateHeader = () => {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 };
 
-generateHeader();
+

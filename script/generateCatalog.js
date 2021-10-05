@@ -1,6 +1,4 @@
-"use strict";
-
-const generateCatalog = () => {
+export const generateCatalog = () => {
     const catalogHTML = `
         <div class="catalog">
             <button
@@ -40,5 +38,3 @@ const generateCatalog = () => {
 
     document.body.insertAdjacentHTML("beforeend", catalogHTML);
 };
-
-generateCatalog();
