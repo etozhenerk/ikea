@@ -4,5 +4,11 @@ export const getData = {
         fetch(this.url)
         .then((response) => response.json())
         .then(process);
+    },
+    wishList(list, callBack) {
+        this.get((data) => {
+            const result = data.filter(item => list.includes(item.id));
+            callBack(result);
+        })
     }
 };

@@ -27,7 +27,7 @@ export const loadData = () => {
         if(prop === "s"){
 
         }else if(prop === "wishlist"){
-
+            getData.wishList(wishList, (data) => console.log(data));
         }else {
 
         }
