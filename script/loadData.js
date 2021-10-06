@@ -1,3 +1,5 @@
+import { getData } from "./getData.js";
+
 export const loadData = () => {
     const wishList = ["idd005", "idd100", "idd077", "idd03"];
 
@@ -27,7 +29,7 @@ export const loadData = () => {
         }else if(prop === "wishlist"){
 
         }else {
-            
+
         }
     }
 
