@@ -29,7 +29,7 @@ export const loadData = () => {
         }else if(prop === "wishlist"){
             getData.wishList(wishList, (data) => console.log(data));
         }else {
-
+            getData.category(prop, value, (data) => console.log(data))
         }
     }
 
