@@ -10,5 +10,11 @@ export const getData = {
             const result = data.filter(item => list.includes(item.id));
             callBack(result);
         })
+    },
+    item(value, callBack) {
+        this.get((data) => {
+            const result = data.find(item => item.id === value);
+            callBack(result);
+        })
     }
 };

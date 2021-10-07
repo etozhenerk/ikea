@@ -34,7 +34,7 @@ export const loadData = () => {
     }
 
     if(location.hash){
-
+        getData.item(location.hash.substring(1), (data) => console.log(data));
     }
 
     if(location.pathname.includes("cart")){
