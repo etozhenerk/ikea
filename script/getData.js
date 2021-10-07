@@ -16,5 +16,11 @@ export const getData = {
             const result = data.find(item => item.id === value);
             callBack(result);
         })
+    },
+    cart(list, callBack) {
+        this.get((data) => {
+            const result = data.filter(item => list.some(obj => obj.id === item.id));
+            callBack(result);
+        })
     }
 };
