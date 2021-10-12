@@ -1,6 +1,7 @@
 const PARAM = {
     cat: "category",
     subcat: "subcategory",
+    search: ["name", "description", "category", "subcategory"],
 };
 
 export const getData = {
@@ -31,6 +32,30 @@ export const getData = {
     category(prop, value, callBack) {
         this.get((data) => {
             const result = data.filter((item) => item[PARAM[prop]].toLowerCase() === value.toLowerCase());
+            callBack(result);
+        });
+    },
+    search(value, callBack) {
+        this.get((data) => {
+            const result = data.filter((item) => {
+                for (const prop in item) {
+                    if (PARAM.search.includes(prop) && item[prop].toLowerCase().includes(value.toLowerCase())) {
+                        return true;
+                    }
+                }
+            });
+            callBack(result);
+        });
+    },
+    catalog(callBack) {
+        this.get((data) => {
+            const result = data.filter((item) => item);
+            callBack(result);
+        });
+    },
+    subCatalog(callBack) {
+        this.get((data) => {
+            const result = data.filter((item) => item);
             callBack(result);
         });
     },
