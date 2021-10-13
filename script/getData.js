@@ -49,13 +49,23 @@ export const getData = {
     },
     catalog(callBack) {
         this.get((data) => {
-            const result = data.filter((item) => item);
+            const result = data.reduce((arr, item) => {
+                if (!arr.includes(item.category)) {
+                    arr.push(item.category);
+                }
+                return arr;
+            }, []);
             callBack(result);
         });
     },
-    subCatalog(callBack) {
+    subCatalog(value, callBack) {
         this.get((data) => {
-            const result = data.filter((item) => item);
+            const result = data.reduce((arr, item) => {
+                if (!arr.includes(item.subcategory) && item.category === value) {
+                    arr.push(item.subcategory);
+                }
+                return arr;
+            }, []);
             callBack(result);
         });
     },
