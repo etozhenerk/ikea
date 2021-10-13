@@ -1,16 +1,19 @@
+import { getData } from "./getData.js";
+
 export const generateFooter = () => {
-    const footerHTML = `
+    getData.catalog((data) => {
+        let catalogList = "";
+        data.forEach((item) => {
+            catalogList += `<li class="footer-list"><a href="goods.html?cat=${item}">${item}</a></li>`;
+        });
+        const footerHTML = `
         <footer>
             <div class="container">
                 <div class="footer">
                     <div class="footer-catalog">
                         <h2 class="footer-header">Каталог</h2>
                         <ul>
-                            <li class="footer-list"><a href="goods.html?cat=Мебель">Мебель</a></li>
-                            <li class="footer-list"><a href="goods.html?cat=Кухня">Кухня</a></li>
-                            <li class="footer-list"><a href="goods.html?cat=Текстиль">Текстиль</a></li>
-                            <li class="footer-list"><a href="goods.html?cat=Освещение">Освещение</a></li>
-                            <li class="footer-list"><a href="goods.html?cat=Декор">Декор</a></li>
+                            ${catalogList}
                         </ul>
                     </div>
                     <div class="footer-about">
@@ -39,5 +42,6 @@ export const generateFooter = () => {
         </footer>
     `;
 
-    document.body.insertAdjacentHTML("beforeend", footerHTML);
+        document.body.insertAdjacentHTML("beforeend", footerHTML);
+    });
 };
