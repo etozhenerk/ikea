@@ -9,4 +9,5 @@ import { loadData } from "./loadData.js"
 generateHeader();
 generateFooter();
 generateCatalog();
+generateGoodsPage();
 loadData();

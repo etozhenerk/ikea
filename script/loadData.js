@@ -1,7 +1,7 @@
 import { getData } from "./getData.js";
 
 export const loadData = () => {
-    const wishList = ["idd005", "idd100", "idd077", "idd03"];
+
 
     const cartList = [
         {
@@ -19,19 +19,7 @@ export const loadData = () => {
     ];
 
 
-    if(location.search){
-        const search = decodeURI(location.search);
-        const prop = search.split("=")[0].substring(1);
-        const value = search.split("=")[1];
 
-        if(prop === "s"){
-            getData.search(value, (data) => console.log(data));
-        }else if(prop === "wishlist"){
-            getData.wishList(wishList, (data) => console.log(data));
-        }else if(prop === 'cat' || prop === "subcat") {
-            getData.category(prop, value, (data) => console.log(data))
-        }
-    }
 
     if(location.hash){
         getData.item(location.hash.substring(1), (data) => console.log(data));
