@@ -10,6 +10,10 @@ export const generateGoodsPage = () => {
 
     const generateCards = (data) => {
         goodsList.textContent = "";
+        if(!data.length) {
+            const goods = document.querySelector('.goods');
+            goods.textContent = location.search === "?wishlist" ? "Список желаний пуст" : "К сожалению по вашему запросу ничего не найдено";
+        }
         data.forEach(({ name, description, price, img, count, id }) => {
             goodsList.insertAdjacentHTML(
                 "afterbegin",
