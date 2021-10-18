@@ -2,7 +2,7 @@ import { getData } from "./getData.js";
 
 const COUNTER = 6;
 
-const wishList = ["idd005", "idd100", "idd077", "idd03"];
+
 
 export const generateGoodsPage = () => {
     const mainHeader = document.querySelector(".main-header");

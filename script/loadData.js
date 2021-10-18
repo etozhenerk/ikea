@@ -3,20 +3,7 @@ import { getData } from "./getData.js";
 export const loadData = () => {
 
 
-    const cartList = [
-        {
-            id: "idd015",
-            const: 3,
-        },
-        {
-            id: "idd045",
-            const: 1,
-        },
-        {
-            id: "idd095",
-            const: 2,
-        },
-    ];
+
 
 
 
