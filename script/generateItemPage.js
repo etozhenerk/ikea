@@ -60,6 +60,10 @@ export const generateItemPage = () => {
             checkWishList();
         });
 
+        btnGood.addEventListener('click', () => {
+            userData.cartList = id;
+        });
+
         checkWishList();
         
     };

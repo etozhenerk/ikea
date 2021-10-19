@@ -1,19 +1,6 @@
 export const userData = {
     wishListData: [],
-    cartListData: [
-        {
-            id: "idd015",
-            const: 3,
-        },
-        {
-            id: "idd045",
-            const: 1,
-        },
-        {
-            id: "idd095",
-            const: 2,
-        },
-    ],
+    cartListData: [],
 
     get wishList() {
         return this.wishListData;
@@ -24,6 +11,21 @@ export const userData = {
             this.wishListData.splice(index, 1);
         } else {
             this.wishListData.push(id);
+        }
+    },
+    get cartList() {
+        return this.cartListData;
+    },
+    set cartList(id) {
+        let obj = this.cartListData.find((item) => item.id === id);
+        if (obj) {
+            obj.count++;
+        } else {
+            obj = {
+                id,
+                count: 1,
+            };
+            this.cartListData.push(obj);
         }
     },
 };

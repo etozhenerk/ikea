@@ -1,5 +1,5 @@
 import { getData } from "./getData.js";
-
+import { userData } from "./userData.js";
 const COUNTER = 6;
 
 
@@ -64,7 +64,7 @@ export const generateGoodsPage = () => {
             getData.search(value, generateCards);
             mainHeader.textContent = `Поиск: ${value}`;
         } else if (prop === "wishlist") {
-            getData.wishList(wishList, generateCards);
+            getData.wishList(userData.wishList, generateCards);
             mainHeader.textContent = `Список желаний`;
         } else if (prop === "cat" || prop === "subcat") {
             getData.category(prop, value, generateCards);
