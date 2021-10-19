@@ -13,15 +13,13 @@ export const generateItemPage = () => {
         const goodItemPriceValue = document.querySelector(".good-item__price-value");
         const btnGood = document.querySelector(".btn-good");
         const btnAddWishlist = document.querySelector(".btn-add-wishlist");
-        const breadcrumbLinks = document.querySelectorAll('.breadcrumb__link');
-
+        const breadcrumbLinks = document.querySelectorAll(".breadcrumb__link");
 
         breadcrumbLinks[0].textContent = category;
         breadcrumbLinks[0].href = `goods.html?cat=${category}`;
         breadcrumbLinks[1].textContent = subcategory;
         breadcrumbLinks[1].href = `goods.html?subcat=${subcategory}`;
         breadcrumbLinks[2].textContent = itemName;
-
 
         goodImages.textContent = "";
         goodItemHeader.textContent = itemName;
@@ -40,32 +38,31 @@ export const generateItemPage = () => {
             );
         });
 
-        if(count > NEW_COUNT_ITEM) {
+        if (count > NEW_COUNT_ITEM) {
             goodItemNew.style.display = "block";
-        } else if(!count) {
+        } else if (!count) {
             goodItemEmpty.style.display = "block";
             btnGood.style.display = "none";
         }
 
         const checkWishList = () => {
-            if(userData.wishList.includes(id)){
-                btnAddWishlist.classList.add('contains-wishlist');
-            }else {
-                btnAddWishlist.classList.remove('contains-wishlist');
+            if (userData.wishList.includes(id)) {
+                btnAddWishlist.classList.add("contains-wishlist");
+            } else {
+                btnAddWishlist.classList.remove("contains-wishlist");
             }
         };
 
-        btnAddWishlist.addEventListener('click', () => {
+        btnAddWishlist.addEventListener("click", () => {
             userData.wishList = id;
             checkWishList();
         });
 
-        btnGood.addEventListener('click', () => {
+        btnGood.addEventListener("click", () => {
             userData.cartList = id;
         });
 
         checkWishList();
-        
     };
 
     if (location.hash && location.pathname.includes("card")) {

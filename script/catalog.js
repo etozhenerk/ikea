@@ -46,6 +46,6 @@ export const catalog = () => {
     catalog.addEventListener("click", openSubMenu);
     subCatalog.addEventListener("click", (e) => {
         const btnReturn = e.target.closest(".btn-return");
-        if(btnReturn) closeSubMenu();
+        if (btnReturn) closeSubMenu();
     });
 };

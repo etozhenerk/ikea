@@ -2,13 +2,11 @@ import { getData } from "./getData.js";
 import { userData } from "./userData.js";
 const COUNTER = 6;
 
-
-
 export const generateGoodsPage = () => {
     const mainHeader = document.querySelector(".main-header");
-    const goodsList = document.querySelector(".goods-list");
 
     const generateCards = (data) => {
+        const goodsList = document.querySelector(".goods-list");
         goodsList.textContent = "";
         if (!data.length) {
             const goods = document.querySelector(".goods");
@@ -52,6 +50,14 @@ export const generateGoodsPage = () => {
                     </a>
                 </li>`,
             );
+        });
+
+        goodsList.addEventListener("click", (e) => {
+            const btnAddCard = e.target.closest(".btn-add-card");
+            if (btnAddCard) {
+                e.preventDefault();
+                userData.cartList = btnAddCard.dataset.idd;
+            }
         });
     };
 
