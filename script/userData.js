@@ -33,4 +33,9 @@ export const userData = {
 
         setLocalStorage('cartList', this.cartListData);
     },
+    set changeCountCartList (itemCart) {
+        let obj = this.cartListData.find((item) => item.id === itemCart.id);
+        obj.count = itemCart.count;
+        setLocalStorage('cartList', this.cartListData);
+    }
 };
