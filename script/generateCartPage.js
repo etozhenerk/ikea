@@ -84,7 +84,8 @@ export const generateCartPage = () => {
         cartList.addEventListener("click", (e) => {
             const target = e.target;
             if(target.closest(".btn-remove")){
-                console.log(11);
+                userData.deleteItemCart = target.dataset.idd;
+                getData.cart(userData.cartList, renderCartList);
             }
         })
 
